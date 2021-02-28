@@ -7,8 +7,19 @@ export default class Seat extends Component {
 
   render () {
 
+    const { onToggleReserved, reserved } = this.props;
+
     let classNames = 'seat';
-    return <div className={classNames}></div>
-      
+
+    if (reserved) {
+      console.log(123456);
+      classNames = 'reserve';
+    }
+
+    return <div
+              className={classNames}
+              onClick={onToggleReserved}>
+          </div>
+
   };
 }

@@ -28,6 +28,28 @@ export default class App extends Component {
     }
   }
 
+  toggleProperty(arr, id, propName) {
+    const idx = arr.findIndex((el) => el.id === id);
+
+    const oldItem = arr[idx];
+    const newItem = {... oldItem,
+      [propName]: !oldItem[propName]};
+
+    return [
+      ... arr.slice(0, idx),
+      newItem,
+      ... arr.slice(idx + 1)
+    ];
+  }
+
+  onToggleReserved = (id) => {
+    this.setState(({ seats }) => {
+      return {
+        seats: this.toggleProperty(seats, id, 'reserved')
+      };
+    });
+  };
+
   render() {
 
     const { seats } = this.state;
@@ -39,7 +61,9 @@ export default class App extends Component {
     return (
       <div>
 
-        <Hall seats = {seats} />
+        <Hall
+          seats = {seats}
+          onToggleReserved = {this.onToggleReserved} />
         <CountSeats free={freeCount} reserve={reserveCount}/>
       </div>
     )

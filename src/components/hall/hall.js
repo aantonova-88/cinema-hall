@@ -4,13 +4,14 @@ import Seat from '../seat';
 
 import './hall.css';
 
-const Hall = ({seats}) => {
+const Hall = ({ seats, onToggleReserved }) => {
 
   const elements = seats.map((item) => {
     const {id} = item;
     return (
       <span key = {id}>
-        <Seat />
+        <Seat
+          onToggleReserved = { () => onToggleReserved(id) } />
       </span>
     )
   });
