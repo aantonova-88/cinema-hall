@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import Seat from '../seat';
-import Row from '../row';
 import CountSeats from '../count-seats';
+import Hall from '../hall';
 
 import './app.css';
 
@@ -12,6 +12,7 @@ export default class App extends Component {
 
   state = {
     seats: [
+      this.createSeats(),
       this.createSeats(),
       this.createSeats(),
       this.createSeats(),
@@ -38,7 +39,7 @@ export default class App extends Component {
     return (
       <div>
 
-        <Row />
+        <Hall seats = {seats} />
         <CountSeats free={freeCount} reserve={reserveCount}/>
       </div>
     )

@@ -6,3 +6,7 @@
   width: 15px;
   margin: 3px;
 }
+
+.seat.reserve {
+  background-color: red;
+}
