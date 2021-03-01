@@ -7,10 +7,11 @@ import './hall.css';
 const Hall = ({ seats, onToggleReserved }) => {
 
   const elements = seats.map((item) => {
-    const {id} = item;
+    const {id, ... itemProps} = item;
     return (
       <span key = {id}>
         <Seat
+          {... itemProps}
           onToggleReserved = { () => onToggleReserved(id) } />
       </span>
     )

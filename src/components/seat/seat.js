@@ -12,8 +12,7 @@ export default class Seat extends Component {
     let classNames = 'seat';
 
     if (reserved) {
-      console.log(123456);
-      classNames = 'reserve';
+      classNames += ' reserve';
     }
 
     return <div
