@@ -9,7 +9,8 @@ const Hall = ({ seats, onToggleReserved }) => {
   const elements = seats.map((item) => {
     const {id, ... itemProps} = item;
     return (
-      <span key = {id}>
+      
+      <span key = {id} className="hall">
         <Seat
           {... itemProps}
           onToggleReserved = { () => onToggleReserved(id) } />

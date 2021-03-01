@@ -17,6 +17,14 @@ export default class App extends Component {
       this.createSeats(),
       this.createSeats(),
       this.createSeats(),
+      this.createSeats(),
+      this.createSeats(),
+      this.createSeats(),
+      this.createSeats(),
+      this.createSeats(),
+      this.createSeats(),
+      this.createSeats(),
+      this.createSeats(),
       this.createSeats()
     ]
   };
@@ -59,7 +67,7 @@ export default class App extends Component {
     const freeCount = seats.length - reserveCount;
 
     return (
-      <div>
+      <div className="container">
 
         <Hall
           seats = {seats}
