@@ -68,7 +68,10 @@ export default class App extends Component {
 
     return (
       <div className="container">
-
+        <div>
+          <Seat />Free <span className="seat reserve"></span>Selected
+        </div>
+        <div className="screen"></div>
         <Hall
           seats = {seats}
           onToggleReserved = {this.onToggleReserved} />
