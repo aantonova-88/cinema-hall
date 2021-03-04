@@ -1,7 +1,6 @@
 .seat {
   display: inline-block;
-  color: white;
-  background-color: black;
+  background-color: #8FBC8F;
   height: 12px;
   width: 15px;
   margin: 3px;

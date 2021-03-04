@@ -1,5 +1,5 @@
 body {
-  background-color: #CD5C5C;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,14 +8,12 @@ body {
 }
 
 .container {
-  width: 150px;
+  width: 180px;
 }
 
 .screen {
-  background-color: #fff;
   height: 70px;
   width: 100%;
   margin: 15px 0;
-  transform: rotateX(-45deg);
-  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  border: 2px dashed grey;
 }

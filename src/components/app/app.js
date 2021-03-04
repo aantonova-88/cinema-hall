@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Seat from '../seat';
 import CountSeats from '../count-seats';
 import Hall from '../hall';
+import MovieList from '../movie-list';
 
 import './app.css';
 
@@ -12,6 +13,8 @@ export default class App extends Component {
 
   state = {
     seats: [
+      this.createSeats(),
+      this.createSeats(),
       this.createSeats(),
       this.createSeats(),
       this.createSeats(),
@@ -68,6 +71,7 @@ export default class App extends Component {
 
     return (
       <div className="container">
+        <MovieList />
         <div>
           <Seat />Free <span className="seat reserve"></span>Selected
         </div>

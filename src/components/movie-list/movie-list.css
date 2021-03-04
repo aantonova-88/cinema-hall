@@ -1,0 +1,20 @@
+.movie-container {
+  margin: 20px 0;
+}
+
+.movie-container select {
+  background-color: #FFEBCD;
+  border: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 10px;
+  padding: 5px 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.movie-container h3 {
+  margin: 5px 0;
+  text-align: center;
+}
