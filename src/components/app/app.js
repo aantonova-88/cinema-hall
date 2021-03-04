@@ -9,34 +9,34 @@ import './app.css';
 
 export default class App extends Component {
 
-  seatId = 0;
-
   state = {
-    seats: [
-      this.createSeats(),
-      this.createSeats(),
-      this.createSeats(),
-      this.createSeats(),
-      this.createSeats(),
-      this.createSeats(),
-      this.createSeats(),
-      this.createSeats(),
-      this.createSeats(),
-      this.createSeats(),
-      this.createSeats(),
-      this.createSeats(),
-      this.createSeats(),
-      this.createSeats(),
-      this.createSeats(),
-      this.createSeats()
-    ]
+    seats: this.createSeats(50),
+    price: 10
   };
 
-  createSeats() {
+
+
+  createSeat(id) {
     return {
-      reserved: false,
-      id: this.seatId++
+      id,
+      reserved: false
     }
+  }
+
+  createSeats (amount) {
+    let [,...ids] = Array(amount+1).keys();
+    let seats = ids.map((el) => {
+      return this.createSeat(el);
+    });
+    return seats;
+  }
+
+  onChangePrice = (numb) => {
+    this.setState(({price}) => {
+      return {
+        price: numb
+      };
+    });
   }
 
   toggleProperty(arr, id, propName) {
@@ -63,7 +63,7 @@ export default class App extends Component {
 
   render() {
 
-    const { seats } = this.state;
+    const { seats, price } = this.state;
 
     const reserveCount = seats
                       .filter((el) => el.reserved).length;
@@ -71,7 +71,7 @@ export default class App extends Component {
 
     return (
       <div className="container">
-        <MovieList />
+        <MovieList onChangePrice = {this.onChangePrice}/>
         <div>
           <Seat />Free <span className="seat reserve"></span>Selected
         </div>
@@ -79,7 +79,7 @@ export default class App extends Component {
         <Hall
           seats = {seats}
           onToggleReserved = {this.onToggleReserved} />
-        <CountSeats free={freeCount} reserve={reserveCount}/>
+        <CountSeats free={freeCount} reserve={reserveCount} totalPrice={price*reserveCount}/>
       </div>
     )
   };
