@@ -1,0 +1,12 @@
+.amount {
+  text-align: center;
+  color: #808080;
+}
+
+.amount h3 {
+  margin-top: 10px;
+}
+
+.count {
+  color: #FF7F50;
+}

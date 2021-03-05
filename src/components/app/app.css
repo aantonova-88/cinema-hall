@@ -8,12 +8,22 @@ body {
 }
 
 .container {
-  width: 180px;
+  width: 310px;
 }
 
 .screen {
   height: 70px;
-  width: 100%;
+  width: 300px;
   margin: 15px 0;
   border: 2px dashed grey;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hall {
+  margin-left: 5px;
 }

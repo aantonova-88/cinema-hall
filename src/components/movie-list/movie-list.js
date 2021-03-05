@@ -6,7 +6,6 @@ export default class MovieList extends Component {
 
   onChangeTicketPrice = (e) => {
     let ticketPrice = +e.target.value;
-    console.log(ticketPrice);
     return ticketPrice;
   }
 
@@ -14,7 +13,7 @@ export default class MovieList extends Component {
     const {onChangePrice} = this.props;
     return (
     <div className="movie-container">
-    <h3>Pick a movie</h3>
+    <h3>Choose a movie</h3>
     <select className="movie"
             onChange={(e) => onChangePrice(this.onChangeTicketPrice(e))}>
       <option value="10">Avatar ($10) </option>

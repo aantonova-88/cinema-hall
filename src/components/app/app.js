@@ -10,7 +10,7 @@ import './app.css';
 export default class App extends Component {
 
   state = {
-    seats: this.createSeats(50),
+    seats: this.createSeats(55),
     price: 10
   };
 
@@ -72,13 +72,15 @@ export default class App extends Component {
     return (
       <div className="container">
         <MovieList onChangePrice = {this.onChangePrice}/>
-        <div>
-          <Seat />Free <span className="seat reserve"></span>Selected
+        <div className="legend">
+          <Seat />Free <span className="seat reserve"></span>Reserved
         </div>
         <div className="screen"></div>
+        <div className="hall">
         <Hall
           seats = {seats}
           onToggleReserved = {this.onToggleReserved} />
+        </div>
         <CountSeats free={freeCount} reserve={reserveCount} totalPrice={price*reserveCount}/>
       </div>
     )
